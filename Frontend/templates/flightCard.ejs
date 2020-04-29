@@ -1,0 +1,33 @@
+
+<div class="card col-sm-12 col-md-5 col-lg-4 rounded shadow no-padding bg-lgreen">
+    
+    <img src="assets/images/plane.jpg" class="card-img-top">
+    <div class="card-body">
+
+        <div class="align-items-center col row text-center no-margin no-padding">
+            <% if( returnT=="to") { %>
+                <span class="badge badge-success badge-status">to</span>
+            <% } else if( returnT=="from") { %>
+                <span class="badge badge-danger badge-status">from</span>
+            <% } %>
+            <h6 class="col card-text font-weight-bold" id="c2c"><%= route %></h6>
+        </div> <hr>
+
+        <div class="align-items-center col row no-margin">
+            <div class="col-2"><i class="fas fa-plane"></i></div>
+            <div class="col-10 card-text" id="carrier"><%= carrier %></div>
+        </div><hr>
+
+        <div class="align-items-center col row no-margin">
+            <div class="col-2"><i class="far fa-calendar-alt"></i></div>
+            <div class="col-10 card-text" id="depTime"><%= depDate %></div>
+        </div><hr>
+
+        <div class="align-items-center col row no-margin">
+            <div class="col-2"><i class="fas fa-money-check-alt"></i></div>
+            <div class=" col-10 card-text" id="price"><%= price %></div>
+        </div>
+
+    </div>
+    <div class="text-center"><button class="btn bg-black">Select</button></div>
+</div>

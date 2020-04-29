@@ -1,0 +1,128 @@
+<% include common/header.ejs %>
+
+<div class="col-8 mx-auto black text-slide">
+    Hello there.<br>
+    <p>We will help you to choose the cheapest flights!</p>
+</div>
+
+<div class="no-padding head-img col-12"><div><img src="assets/images/main.jpg"></div></div>
+
+<div class="col-9 mx-auto no-padding"><h4>Where do you want to fly?</h4></div>
+<div class="col-9 mx-auto shadow hard-top-left search-bar" id="search">
+
+    <div class="container-fluid no-margin d-flex justify-content-center no-padding row" id="flight">
+        <div class="col-sm-12 col-md-6 col-lg-2 form-group adress-from">
+            <label for="">City from:</label>
+            <input type="text" class="form-control" placeholder="City or airport..." id="cityfrom">
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-2 form-group adress-to">
+            <label for="">City to:</label>
+            <input type="text" class="form-control" placeholder="City or airport..." id="cityto">
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-4 form-group date-since">
+            <label for="">Date since:</label>
+            <input type="date" min="2020-07-01" max="3000-12-31" class="form-control" id="datesince">
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-4 form-group date-to">
+            <label for="">Date to:</label>
+            <input type="date" min="2020-07-05" max="3000-12-31" class="form-control" id="dateto">
+        </div>
+
+        <div class="col-sm-12 col-md-4">
+            <label>Max price, UAH <input type="number" class="form-control" step="100" id="maxPrice"></label>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+            <label for="">Direct flight<input type="checkbox" style="margin-left: 10px" id="direct"></label>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+            <label for="">Return ticket<input type="checkbox" style="margin-left: 10px" id="return_ticket"></label>
+        </div>
+
+        <div class="col-12 text-center no-padding"><button class="btn bg-black" id="searchForFlights"><b>Search</b></button></div>
+    </div>    
+
+    <div class="container-fluid no-margin d-flex justify-content-center no-padding row visibility-none" id="hotel">
+        <div class="col-sm-12 col-md-6 col-lg-2 form-group adress-from">
+            <label for="">The city:</label>
+            <input type="text" class="form-control" placeholder="City or airport..." id="placeToSearch">
+        </div>    
+        <div class="col-12 text-center no-padding"><button class="btn bg-black" id="searchForHotels"><b>Search</b></button></div>
+    </div>    
+    
+</div>
+
+<div class="col-12 text-center" id="waiting">
+    <div class="spinner-border text-success" role="status"><span class="sr-only">Loading...</span></div>
+</div>
+
+<div class="col-9 mx-auto no-padding justify-content-around cards row" id="flight-result"></div>
+
+<div class="col-8 mx-auto black text-slide">
+    Let us help.<br>
+    <p>You do not know where to go, do you? We have some suggestions!</p>
+</div>
+
+<div id="sug" class="col-9 mx-auto no-padding popular-bar">
+    <h4>Personal recommendations</h4>
+    <div class="text-reset font-weight-light tip">Recommendations based on your recent choices.</div>
+    <div class="justify-content-around row">
+        <div class="col-5 no-padding bg-green rounded shadow cart" id="kyoto">
+            <div class=" img rounded-top">
+                <img class ="img-width-fluid" src="assets/images/kyoto.jpg">
+            </div>
+            <div class="col-12 no-margin padding-vertical lgreen">Kyoto, Japan</div>
+        </div>
+        <div class="col-3 no-padding nh-bg-black rounded shadow cart" id="greenl">
+            <div class=" img rounded-top">
+                <img class ="img-width-fluid" src="assets/images/greenland.jpg">
+            </div>
+            <div class="col-12 no-margin padding-vertical lgreen">Nuuk, Greenland</div>
+        </div>
+        <div class="col-3 no-padding bg-green rounded shadow cart" id="kilim">
+            <div class=" img rounded-top">
+                <img class ="img-width-fluid" src="assets/images/kilimanjaro.jpg">
+            </div>
+            <div class="col-12 no-margin padding-vertical lgreen">Kilimanjaro, Tanzania</div>
+        </div>
+        <div class="col-3 no-padding nh-bg-black rounded shadow cart" id="bhutan">
+            <div class=" img rounded-top">
+                <img class ="img-width-fluid" src="assets/images/bhutan.jpg">
+            </div>
+            <div class="col-12 no-margin padding-vertical lgreen">Countryside, Bhutan</div>
+        </div>
+        <div class="col-3 no-padding bg-green rounded shadow cart" id="hawaii">
+            <div class=" img rounded-top">
+                <img class ="img-width-fluid" src="assets/images/hawaii.jpg">
+            </div>
+            <div class="col-12 no-margin padding-vertical lgreen">Countryside, Hawaii</div>
+        </div>
+        <div class="col-5 no-padding nh-bg-black rounded shadow cart" id="munich">
+            <div class=" img rounded-top">
+                <img class ="img-width-fluid" src="assets/images/bavaria.jpg">
+            </div>
+            <div class="col-12 no-margin padding-vertical lgreen">Munich, Germany</div>
+        </div>
+    </div>
+</div>
+
+<div class="col-8 mx-auto black text-slide">
+    Try a map!<br>
+    <p>If our suggestions do not help.</p>
+</div>
+
+<div id="map" class="col-9 mx-auto no-padding map-bar">
+    <h4>Map</h4>
+    <div class="align-items-center justify-content-between col-12 no-margin no-padding row tip">
+        <div class="text-reset font-weight-light">Use a map to choose your destination.</div>
+        <div><button class="btn bg-black hidden" id="tryme-button-result">Search for suggested city</button></div>
+        <div><button class="btn bg-black" id="tryme-button">Try me!</button></div>
+    </div>
+    <div class="img-fluid rounded shadow" id = "googleMap"></div>
+</div>
+
+<% include common/footer.ejs %>
