@@ -15,10 +15,10 @@
     "basil.js": "^0.4.3",
     "brfs": "^1.4.3",
     "ejs": "^2.4.1",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "grunt": "^0.4.5",
     "grunt-browserify": "^4.0.1",
-    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-watch": "^1.1.0",
     "module-name": "0.0.1-security",
     "morgan": "^1.10.0",
     "popper.js": "^1.16.1"
